@@ -1,2 +1,3 @@
 # ch-directs-theme
-Client site
+
+For a client site. You wouldn't like it.
