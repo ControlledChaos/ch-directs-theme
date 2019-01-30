@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @package ip_theme
+ * @package CH_Directs_Theme
  */
 
 get_header(); ?>
@@ -41,8 +41,8 @@ get_header(); ?>
 
 					<?php
 					/* translators: %1$s: smiley */
-					$ip_theme_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'ip-theme' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$ip_theme_archive_content" );
+					$CH_Directs_Theme_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'ip-theme' ), convert_smilies( ':)' ) ) . '</p>';
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$CH_Directs_Theme_archive_content" );
 
 					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>

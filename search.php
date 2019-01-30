@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages
  *
- * @package ip_theme
+ * @package CH_Directs_Theme
  */
 
 get_header(); ?>

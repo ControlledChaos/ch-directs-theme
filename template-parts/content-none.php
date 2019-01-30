@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a message that posts cannot be found
  *
- * @package ip_theme
+ * @package CH_Directs_Theme
  */
 
 ?>

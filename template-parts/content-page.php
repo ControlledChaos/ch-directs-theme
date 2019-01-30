@@ -2,7 +2,7 @@
 /**
  * Template part for displaying page content in page.php
  *
- * @package ip_theme
+ * @package CH_Directs_Theme
  */
 
 ?>
@@ -12,7 +12,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header>
 
-	<?php ip_theme_post_thumbnail(); ?>
+	<?php CH_Directs_Theme_post_thumbnail(); ?>
 
 	<div class="entry-content" itemprop="articleBody">
 		<?php

@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package ip_theme
+ * @package CH_Directs_Theme
  */
 
 /**
@@ -11,7 +11,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function ip_theme_body_classes( $classes ) {
+function CH_Directs_Theme_body_classes( $classes ) {
 
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
@@ -26,16 +26,16 @@ function ip_theme_body_classes( $classes ) {
 	return $classes;
 
 }
-add_filter( 'body_class', 'ip_theme_body_classes' );
+add_filter( 'body_class', 'CH_Directs_Theme_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function ip_theme_pingback_header() {
+function CH_Directs_Theme_pingback_header() {
 
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 
 }
-add_action( 'wp_head', 'ip_theme_pingback_header' );
+add_action( 'wp_head', 'CH_Directs_Theme_pingback_header' );

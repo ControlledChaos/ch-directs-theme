@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package ip_theme
+ * @package CH_Directs_Theme
  */
 
 // Get the site name.

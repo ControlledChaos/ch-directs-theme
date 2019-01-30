@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package ip_theme
+ * @package CH_Directs_Theme
  */
 
-if ( ! function_exists( 'ip_theme_setup' ) ) :
+if ( ! function_exists( 'CH_Directs_Theme_setup' ) ) :
 
-	function ip_theme_setup() {
+	function CH_Directs_Theme_setup() {
 
 		load_theme_textdomain( 'ip-theme', get_template_directory() . '/languages' );
 
@@ -31,7 +31,7 @@ if ( ! function_exists( 'ip_theme_setup' ) ) :
 			'caption',
 		) );
 
-		add_theme_support( 'custom-background', apply_filters( 'ip_theme_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'CH_Directs_Theme_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -47,7 +47,7 @@ if ( ! function_exists( 'ip_theme_setup' ) ) :
 
 	}
 endif;
-add_action( 'after_setup_theme', 'ip_theme_setup' );
+add_action( 'after_setup_theme', 'CH_Directs_Theme_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -56,18 +56,18 @@ add_action( 'after_setup_theme', 'ip_theme_setup' );
  *
  * @global int $content_width
  */
-function ip_theme_content_width() {
+function CH_Directs_Theme_content_width() {
 
-	$GLOBALS['content_width'] = apply_filters( 'ip_theme_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'CH_Directs_Theme_content_width', 640 );
 
 }
-add_action( 'after_setup_theme', 'ip_theme_content_width', 0 );
+add_action( 'after_setup_theme', 'CH_Directs_Theme_content_width', 0 );
 
 /**
  * Register widget area.
  *
  */
-function ip_theme_widgets_init() {
+function CH_Directs_Theme_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'ip-theme' ),
@@ -80,12 +80,12 @@ function ip_theme_widgets_init() {
 	) );
 
 }
-add_action( 'widgets_init', 'ip_theme_widgets_init' );
+add_action( 'widgets_init', 'CH_Directs_Theme_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function ip_theme_scripts() {
+function CH_Directs_Theme_scripts() {
 	wp_enqueue_style( 'ip-theme-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'ip-theme-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
@@ -96,7 +96,7 @@ function ip_theme_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'ip_theme_scripts' );
+add_action( 'wp_enqueue_scripts', 'CH_Directs_Theme_scripts' );
 
 require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';

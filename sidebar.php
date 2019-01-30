@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package ip_theme
+ * @package CH_Directs_Theme
  */
 
 ?>

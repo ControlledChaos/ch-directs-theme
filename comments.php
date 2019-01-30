@@ -5,7 +5,7 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @package ip_theme
+ * @package CH_Directs_Theme
  */
 
 /*
@@ -22,16 +22,16 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-			$ip_theme_comment_count = get_comments_number();
-			if ( '1' === $ip_theme_comment_count ) {
+			$CH_Directs_Theme_comment_count = get_comments_number();
+			if ( '1' === $CH_Directs_Theme_comment_count ) {
 				printf(
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'ip-theme' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf(
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $ip_theme_comment_count, 'comments title', 'ip-theme' ) ),
-					number_format_i18n( $ip_theme_comment_count ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $CH_Directs_Theme_comment_count, 'comments title', 'ip-theme' ) ),
+					number_format_i18n( $CH_Directs_Theme_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}

@@ -6,15 +6,6 @@
  *
  * @package CH_Directs_Theme
  */
-
-if ( is_home() && ! is_front_page() ) {
-    $canonical = get_permalink( get_option( 'page_for_posts' ) );
-} elseif ( is_archive() ) {
-    $canonical = get_permalink( get_option( 'page_for_posts' ) );
-} else {
-    $canonical = get_permalink();
-}
-
 ?>
 <!doctype html>
 <?php do_action( 'before_html' ); ?>
@@ -29,7 +20,7 @@ if ( is_home() && ! is_front_page() ) {
 	<?php if ( is_singular() && pings_open() ) {
 		echo sprintf( '<link rel="pingback" href="%s" />', get_bloginfo( 'pingback_url' ) );
 	} ?>
-	<link href="<?php echo $canonical; ?>" rel="canonical" />
+	<link href="<?php echo get_permalink(); ?>" rel="canonical" />
 	<?php if ( is_search() ) { echo '<meta name="robots" content="noindex,nofollow" />'; } ?>
 
 	<!-- Prefetch font URLs -->
@@ -38,25 +29,12 @@ if ( is_home() && ! is_front_page() ) {
 
 	<?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
 <div id="page" class="site" itemscope="itemscope" itemtype="<?php ip_site_schema(); ?>">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ip-theme' ); ?></a>
-
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php endif;
-			$CH_Directs_Theme_description = get_bloginfo( 'description', 'display' );
-			if ( $CH_Directs_Theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $CH_Directs_Theme_description; ?></p>
-			<?php endif; ?>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<p class="site-description"><?php echo get_bloginfo( 'description', 'display' ); ?></p>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">

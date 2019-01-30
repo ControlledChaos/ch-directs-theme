@@ -2,7 +2,7 @@
 /**
  * Template part for displaying results in search pages
  *
- * @package ip_theme
+ * @package CH_Directs_Theme
  */
 
 ?>
@@ -14,20 +14,20 @@
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php
-			ip_theme_posted_on();
-			ip_theme_posted_by();
+			CH_Directs_Theme_posted_on();
+			CH_Directs_Theme_posted_by();
 			?>
 		</div>
 		<?php endif; ?>
 	</header>
 
-	<?php ip_theme_post_thumbnail(); ?>
+	<?php CH_Directs_Theme_post_thumbnail(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div>
 
 	<footer class="entry-footer">
-		<?php ip_theme_entry_footer(); ?>
+		<?php CH_Directs_Theme_entry_footer(); ?>
 	</footer><
 </article>
