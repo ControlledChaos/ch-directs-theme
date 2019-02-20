@@ -280,7 +280,7 @@ final class Functions {
 	 */
 	public function frontend_styles() {
 
-		// Theme sylesheet.
+		// The main theme stylesheet, minified.
 		wp_enqueue_style( 'ch-directs-theme-style', get_parent_theme_file_uri( 'style.min.css' ), [], '', 'screen' );
 
 		/**
@@ -297,6 +297,10 @@ final class Functions {
 			wp_enqueue_style( 'ch-directs-theme-code',  get_parent_theme_file_uri( '/assets/fonts/source-code-pro/source-code-pro.min.css' ), [], '', 'screen' );
 		}
 
+		// Icon fons stylesheets, minified.
+		wp_enqueue_style( 'ch-directs-theme-icons', get_theme_file_uri( '/assets/css/ch-directs.min.css' ), [], '', 'screen' );
+		wp_enqueue_style( 'ch-directs-theme-icons-embedded', get_theme_file_uri( '/assets/css/ch-directs-embedded.min.css' ), [], '', 'screen' );
+
 	}
 
 	/**
@@ -308,6 +312,7 @@ final class Functions {
 	 */
 	public function admin_styles() {
 
+		// The admin theme stylesheet, minified.
 		wp_enqueue_style( 'ch-directs-theme-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '', 'screen' );
 
 	}
