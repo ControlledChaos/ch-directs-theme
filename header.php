@@ -1,11 +1,13 @@
 <?php
 /**
- * The header for our theme
+ * Theme header
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @package CH_Directs_Theme
+ * @package    WordPress
+ * @subpackage CH_Directs_Theme\Frontend
+ * @since      1.0.0
  */
+
+namespace CH_Directs_Theme\Frontend;
 
 if ( is_home() && ! is_front_page() ) {
     $canonical = get_permalink( get_option( 'page_for_posts' ) );
@@ -40,7 +42,7 @@ if ( is_home() && ! is_front_page() ) {
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site" itemscope="itemscope" itemtype="<?php ip_site_schema(); ?>">
+<div id="page" class="site" itemscope="itemscope" itemtype="<?php chd_site_schema(); ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ip-theme' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">

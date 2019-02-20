@@ -4,15 +4,19 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package CH_Directs_Theme
+ * @package    WordPress
+ * @subpackage CH_Directs_Theme\Frontend
+ * @since      1.0.0
  */
+
+namespace CH_Directs_Theme\Frontend;
 
 /**
  * Conditional Schema attributes for `<div id="page"`.
  */
-if ( ! function_exists( 'ip_site_schema' ) ) :
+if ( ! function_exists( 'chd_site_schema' ) ) :
 
-	function ip_site_schema() {
+	function chd_site_schema() {
 
 		// Change page slugs and template names as needed.
 		if ( is_page( 'about' ) || is_page( 'about-us' ) || is_page_template( 'page-about.php' ) || is_page_template( 'about.php' ) ) {
@@ -42,9 +46,9 @@ endif;
 /**
  * Prints HTML with meta information for the current post-date/time.
  */
-if ( ! function_exists( 'CH_Directs_Theme_posted_on' ) ) :
+if ( ! function_exists( 'chd_posted_on' ) ) :
 
-	function CH_Directs_Theme_posted_on() {
+	function chd_posted_on() {
 
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -73,9 +77,9 @@ endif;
 /**
  * Prints HTML with meta information for the current author.
  */
-if ( ! function_exists( 'CH_Directs_Theme_posted_by' ) ) :
+if ( ! function_exists( 'chd_posted_by' ) ) :
 
-	function CH_Directs_Theme_posted_by() {
+	function chd_posted_by() {
 
 		$byline = sprintf(
 			esc_html_x( 'by %s', 'post author', 'ip-theme' ),
@@ -91,9 +95,9 @@ endif;
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-if ( ! function_exists( 'CH_Directs_Theme_entry_footer' ) ) :
+if ( ! function_exists( 'chd_entry_footer' ) ) :
 
-	function CH_Directs_Theme_entry_footer() {
+	function chd_entry_footer() {
 
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
@@ -156,9 +160,9 @@ endif;
  * Wraps the post thumbnail in an anchor element on index views, or a div
  * element when on single views.
  */
-if ( ! function_exists( 'CH_Directs_Theme_post_thumbnail' ) ) :
+if ( ! function_exists( 'chd_post_thumbnail' ) ) :
 
-	function CH_Directs_Theme_post_thumbnail() {
+	function chd_post_thumbnail() {
 
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;

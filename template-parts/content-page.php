@@ -2,8 +2,12 @@
 /**
  * Template part for displaying page content in page.php
  *
- * @package CH_Directs_Theme
+ * @package    WordPress
+ * @subpackage CH_Directs_Theme\Frontend
+ * @since      1.0.0
  */
+
+namespace CH_Directs_Theme\Frontend;
 
 ?>
 
@@ -12,7 +16,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header>
 
-	<?php CH_Directs_Theme_post_thumbnail(); ?>
+	<?php chd_post_thumbnail(); ?>
 
 	<div class="entry-content" itemprop="articleBody">
 		<?php

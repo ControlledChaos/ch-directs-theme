@@ -5,8 +5,12 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @package CH_Directs_Theme
+ * @package    WordPress
+ * @subpackage CH_Directs_Theme\Frontend
+ * @since      1.0.0
  */
+
+namespace CH_Directs_Theme\Frontend;
 
 /*
  * If the current post is protected by a password and

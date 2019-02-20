@@ -2,8 +2,12 @@
 /**
  * Template part for displaying results in search pages
  *
- * @package CH_Directs_Theme
+ * @package    WordPress
+ * @subpackage CH_Directs_Theme\Frontend
+ * @since      1.0.0
  */
+
+namespace CH_Directs_Theme\Frontend;
 
 ?>
 
@@ -14,20 +18,20 @@
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php
-			CH_Directs_Theme_posted_on();
-			CH_Directs_Theme_posted_by();
+			chd_posted_on();
+			chd_posted_by();
 			?>
 		</div>
 		<?php endif; ?>
 	</header>
 
-	<?php CH_Directs_Theme_post_thumbnail(); ?>
+	<?php chd_post_thumbnail(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div>
 
 	<footer class="entry-footer">
-		<?php CH_Directs_Theme_entry_footer(); ?>
+		<?php chd_entry_footer(); ?>
 	</footer><
 </article>

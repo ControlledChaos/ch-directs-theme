@@ -2,8 +2,12 @@
 /**
  * Template part for displaying a message that posts cannot be found
  *
- * @package CH_Directs_Theme
+ * @package    WordPress
+ * @subpackage CH_Directs_Theme\Frontend
+ * @since      1.0.0
  */
+
+namespace CH_Directs_Theme\Frontend;
 
 ?>
 

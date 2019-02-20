@@ -2,8 +2,12 @@
 /**
  * The template for displaying all pages
  *
- * @package CH_Directs_Theme
+ * @package    WordPress
+ * @subpackage CH_Directs_Theme\Frontend
+ * @since      1.0.0
  */
+
+namespace CH_Directs_Theme\Frontend;
 
 get_header(); ?>
 

@@ -1,9 +1,13 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
+ * The 404 error page
  *
- * @package CH_Directs_Theme
+ * @package    WordPress
+ * @subpackage CH_Directs_Theme\Frontend
+ * @since      1.0.0
  */
+
+namespace CH_Directs_Theme\Frontend;
 
 get_header(); ?>
 

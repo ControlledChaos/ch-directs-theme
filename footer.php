@@ -2,8 +2,12 @@
 /**
  * The template for displaying the footer
  *
- * @package CH_Directs_Theme
+ * @package    WordPress
+ * @subpackage CH_Directs_Theme\Frontend
+ * @since      1.0.0
  */
+
+namespace CH_Directs_Theme\Frontend;
 
 // Get the site name.
 $site_name = esc_attr( get_bloginfo( 'name' ) );
