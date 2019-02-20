@@ -9,6 +9,9 @@
 
 namespace CH_Directs_Theme\Frontend;
 
+// Get template tags from the Template_Tags class.
+use CH_Directs_Theme\Functions\Template_Tags as tags;
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
@@ -18,20 +21,20 @@ namespace CH_Directs_Theme\Frontend;
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php
-			chd_posted_on();
-			chd_posted_by();
+			tags::posted_on();
+			tags::posted_by();
 			?>
 		</div>
 		<?php endif; ?>
 	</header>
 
-	<?php chd_post_thumbnail(); ?>
+	<?php tags::post_thumbnail(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div>
 
 	<footer class="entry-footer">
-		<?php chd_entry_footer(); ?>
+		<?php tags::entry_footer(); ?>
 	</footer><
 </article>

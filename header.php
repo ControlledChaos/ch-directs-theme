@@ -9,6 +9,9 @@
 
 namespace CH_Directs_Theme\Frontend;
 
+// Get template tags from the Template_Tags class.
+use CH_Directs_Theme\Functions\Template_Tags as tags;
+
 if ( is_home() && ! is_front_page() ) {
     $canonical = get_permalink( get_option( 'page_for_posts' ) );
 } elseif ( is_archive() ) {
@@ -42,7 +45,7 @@ if ( is_home() && ! is_front_page() ) {
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site" itemscope="itemscope" itemtype="<?php chd_site_schema(); ?>">
+<div id="page" class="site" itemscope="itemscope" itemtype="<?php echo tags::site_schema(); ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ip-theme' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">

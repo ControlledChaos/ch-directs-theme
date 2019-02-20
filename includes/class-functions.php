@@ -48,7 +48,7 @@ if ( is_plugin_active( CHD_PLUGIN ) && ! defined( 'CHD_PLUGIN_PREFIX' ) ) {
 }
 
 /**
- * Controlled Chaos functions class.
+ * Theme functions class
  *
  * @since  1.0.0
  * @access public
@@ -356,7 +356,7 @@ final class Functions {
 	 */
 	private function dependencies() {
 
-		require_once get_theme_file_path( '/includes/template-tags.php' );
+		require_once get_theme_file_path( '/includes/class-template-tags.php' );
 
 	}
 
