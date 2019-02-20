@@ -9,9 +9,6 @@
 
 namespace CH_Directs_Theme\Frontend;
 
-// Get template tags from the Template_Tags class.
-use CH_Directs_Theme\Functions\Template_Tags as tags;
-
 ?>
 
 <section class="no-results not-found">

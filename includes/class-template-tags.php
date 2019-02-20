@@ -26,7 +26,7 @@ class Template_Tags {
 	 * @access private
 	 * @return string Returns the respective string for the itemtype attribute.
 	 */
-	public static function site_schema() {
+	public function site_schema() {
 
 		// Change page slugs and template names as needed.
 		if ( is_page( 'about' ) || is_page( 'about-us' ) || is_page_template( 'page-about.php' ) || is_page_template( 'about.php' ) ) {
@@ -54,7 +54,7 @@ class Template_Tags {
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	public static function posted_on() {
+	public function posted_on() {
 
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -81,7 +81,7 @@ class Template_Tags {
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	public static function posted_by() {
+	public function posted_by() {
 
 		$byline = sprintf(
 			esc_html_x( 'by %s', 'post author', 'ch-directs-theme' ),
@@ -95,7 +95,7 @@ class Template_Tags {
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	public static function entry_footer() {
+	public function entry_footer() {
 
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
@@ -156,7 +156,7 @@ class Template_Tags {
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	public static function post_thumbnail() {
+	public function post_thumbnail() {
 
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;

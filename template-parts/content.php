@@ -10,7 +10,10 @@
 namespace CH_Directs_Theme\Frontend;
 
 // Get template tags from the Template_Tags class.
-use CH_Directs_Theme\Functions\Template_Tags as tags;
+use CH_Directs_Theme\Functions\Template_Tags;
+
+// Use the class as a variable.
+$tags = new Template_Tags;
 
 ?>
 
@@ -27,14 +30,14 @@ use CH_Directs_Theme\Functions\Template_Tags as tags;
 			?>
 			<div class="entry-meta">
 				<?php
-				tags::posted_on();
-				tags::posted_by();
+				$tags->posted_on();
+				$tags->posted_by();
 				?>
 			</div>
 		<?php endif; ?>
 	</header>
 
-	<?php tags::post_thumbnail(); ?>
+	<?php $tags->post_thumbnail(); ?>
 
 	<div class="entry-content" itemprop="articleBody">
 		<?php
@@ -58,6 +61,6 @@ use CH_Directs_Theme\Functions\Template_Tags as tags;
 	</div>
 
 	<footer class="entry-footer">
-		<?php tags::entry_footer(); ?>
+		<?php $tags->entry_footer(); ?>
 	</footer>
 </article>

@@ -10,7 +10,10 @@
 namespace CH_Directs_Theme\Frontend;
 
 // Get template tags from the Template_Tags class.
-use CH_Directs_Theme\Functions\Template_Tags as tags;
+use CH_Directs_Theme\Functions\Template_Tags;
+
+// Use the class as a variable.
+$tags = new Template_Tags;
 
 ?>
 
@@ -19,7 +22,7 @@ use CH_Directs_Theme\Functions\Template_Tags as tags;
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header>
 
-	<?php tags::post_thumbnail(); ?>
+	<?php $tags->post_thumbnail(); ?>
 
 	<div class="entry-content" itemprop="articleBody">
 		<?php
