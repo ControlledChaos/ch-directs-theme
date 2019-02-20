@@ -411,31 +411,31 @@ h2 + .search-form {
 				left: -999em;
 				top: 0;
 			}
+
+			a {
+				width: 200px;
+			}
+		}
+
+		ul li:hover > ul,
+		ul li.focus > ul {
+			left: 100%;
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
 		}
 	}
-}
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
+	li {
+		position: relative;
+	}
 
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation li {
-	position: relative;
-}
-
-.main-navigation a {
-	display: inline-block;
-	text-decoration: none;
+	a {
+		display: inline-block;
+		text-decoration: none;
+	}
 }
 
 /* Small menu. */
