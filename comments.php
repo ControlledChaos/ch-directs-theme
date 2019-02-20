@@ -29,12 +29,12 @@ if ( post_password_required() ) {
 			$CH_Directs_Theme_comment_count = get_comments_number();
 			if ( '1' === $CH_Directs_Theme_comment_count ) {
 				printf(
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'ip-theme' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'ch-directs-theme' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf(
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $CH_Directs_Theme_comment_count, 'comments title', 'ip-theme' ) ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $CH_Directs_Theme_comment_count, 'comments title', 'ch-directs-theme' ) ),
 					number_format_i18n( $CH_Directs_Theme_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -59,7 +59,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'ip-theme' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'ch-directs-theme' ); ?></p>
 			<?php
 		endif;
 

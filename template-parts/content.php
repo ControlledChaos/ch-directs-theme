@@ -40,7 +40,7 @@ use CH_Directs_Theme\Functions\Template_Tags as tags;
 		<?php
 		the_content( sprintf(
 			wp_kses(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ip-theme' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ch-directs-theme' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -51,7 +51,7 @@ use CH_Directs_Theme\Functions\Template_Tags as tags;
 		) );
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ip-theme' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ch-directs-theme' ),
 			'after'  => '</div>',
 		) );
 		?>

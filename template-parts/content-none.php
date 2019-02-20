@@ -16,7 +16,7 @@ use CH_Directs_Theme\Functions\Template_Tags as tags;
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'ip-theme' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'ch-directs-theme' ); ?></h1>
 	</header>
 
 	<div class="page-content" itemprop="articleBody">
@@ -24,7 +24,7 @@ use CH_Directs_Theme\Functions\Template_Tags as tags;
 
 			printf(
 				'<p>' . wp_kses(
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'ip-theme' ),
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'ch-directs-theme' ),
 					array(
 						'a' => array(
 							'href' => array(),
@@ -36,13 +36,13 @@ use CH_Directs_Theme\Functions\Template_Tags as tags;
 
 		elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ip-theme' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ch-directs-theme' ); ?></p>
 			<?php
 			get_search_form();
 
 		else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ip-theme' ); ?></p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ch-directs-theme' ); ?></p>
 			<?php
 			get_search_form();
 

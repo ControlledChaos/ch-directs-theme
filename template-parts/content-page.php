@@ -26,7 +26,7 @@ use CH_Directs_Theme\Functions\Template_Tags as tags;
 		the_content();
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ip-theme' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ch-directs-theme' ),
 			'after'  => '</div>',
 		) );
 		?>
@@ -38,7 +38,7 @@ use CH_Directs_Theme\Functions\Template_Tags as tags;
 			edit_post_link(
 				sprintf(
 					wp_kses(
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'ip-theme' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'ch-directs-theme' ),
 						array(
 							'span' => array(
 								'class' => array(),

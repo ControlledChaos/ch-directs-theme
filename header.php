@@ -46,29 +46,28 @@ if ( is_home() && ! is_front_page() ) {
 
 <body <?php body_class(); ?>>
 <div id="page" class="site" itemscope="itemscope" itemtype="<?php echo tags::site_schema(); ?>">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ip-theme' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ch-directs-theme' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 		<div class="site-branding">
 			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			if ( is_front_page() ) : ?>
+				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 				<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php endif;
-			$CH_Directs_Theme_description = get_bloginfo( 'description', 'display' );
-			if ( $CH_Directs_Theme_description || is_customize_preview() ) :
+			$description = get_bloginfo( 'description', 'display' );
+			if ( $description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $CH_Directs_Theme_description; ?></p>
+				<p class="site-description"><?php echo $description; ?></p>
 			<?php endif; ?>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'ip-theme' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'ch-directs-theme' ); ?></button>
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
+				'theme_location' => 'main',
 				'menu_id'        => 'primary-menu',
 			) );
 			?>

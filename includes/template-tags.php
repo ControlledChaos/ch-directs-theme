@@ -64,7 +64,7 @@ if ( ! function_exists( 'chd_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'ip-theme' ),
+			esc_html_x( 'Posted on %s', 'post date', 'ch-directs-theme' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -82,7 +82,7 @@ if ( ! function_exists( 'chd_posted_by' ) ) :
 	function chd_posted_by() {
 
 		$byline = sprintf(
-			esc_html_x( 'by %s', 'post author', 'ip-theme' ),
+			esc_html_x( 'by %s', 'post author', 'ch-directs-theme' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -102,15 +102,15 @@ if ( ! function_exists( 'chd_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 
-			$categories_list = get_the_category_list( esc_html__( ', ', 'ip-theme' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'ch-directs-theme' ) );
 			if ( $categories_list ) {
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'ip-theme' ) . '</span>', $categories_list );
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'ch-directs-theme' ) . '</span>', $categories_list );
 			}
 
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'ip-theme' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'ch-directs-theme' ) );
 
 			if ( $tags_list ) {
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'ip-theme' ) . '</span>', $tags_list );
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'ch-directs-theme' ) . '</span>', $tags_list );
 			}
 
 		}
@@ -121,7 +121,7 @@ if ( ! function_exists( 'chd_entry_footer' ) ) :
 			comments_popup_link(
 				sprintf(
 					wp_kses(
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'ip-theme' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'ch-directs-theme' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -137,7 +137,7 @@ if ( ! function_exists( 'chd_entry_footer' ) ) :
 		edit_post_link(
 			sprintf(
 				wp_kses(
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'ip-theme' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'ch-directs-theme' ),
 					array(
 						'span' => array(
 							'class' => array(),
