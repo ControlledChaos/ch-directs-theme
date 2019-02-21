@@ -19,11 +19,10 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'page' );
 
-		endwhile; ?>
+		endwhile; // End of the loop.
+		?>
 
 		</main>
 	</div>
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer();

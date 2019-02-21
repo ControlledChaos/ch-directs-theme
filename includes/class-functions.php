@@ -184,6 +184,10 @@ final class Functions {
 		 * @since 1.0.0
 		 */
 
+		// 1:1 Square.
+		add_image_size( __( 'avatar', 'ch-directs-theme' ), 80, 80, true );
+		add_image_size( __( 'large-thumb', 'ch-directs-theme' ), 240, 240, true );
+
 		// 16:9 HD Video.
 		add_image_size( __( 'video', 'ch-directs-theme' ), 1280, 720, true );
 		add_image_size( __( 'video-md', 'ch-directs-theme' ), 960, 540, true );
@@ -215,6 +219,7 @@ final class Functions {
 		 * @since  1.0.0
 		 */
 		register_nav_menus( [
+			'front'  => __( 'Front Page Menu', 'ch-directs-theme' ),
 			'main'   => __( 'Main Menu', 'ch-directs-theme' ),
 			'footer' => __( 'Footer Menu', 'ch-directs-theme' ),
 			'social' => __( 'Social Menu', 'ch-directs-theme' )
@@ -254,6 +259,11 @@ final class Functions {
 	public function frontend_scripts() {
 
 		wp_enqueue_script( 'jquery' );
+
+		// FullPageJS script on the front page.
+		if ( is_front_page() ) {
+			wp_enqueue_script( 'ch-directs-fullpage', get_parent_theme_file_uri( 'assets/js/fullpage.min.js' ), [ 'jquery' ], null, true );
+		}
 
 		// Comments scripts.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -300,6 +310,11 @@ final class Functions {
 		// Icon fons stylesheets, minified.
 		wp_enqueue_style( 'ch-directs-theme-icons', get_theme_file_uri( '/assets/css/ch-directs.min.css' ), [], '', 'screen' );
 		wp_enqueue_style( 'ch-directs-theme-icons-embedded', get_theme_file_uri( '/assets/css/ch-directs-embedded.min.css' ), [], '', 'screen' );
+
+		// FullPageJS styles on the front page.
+		if ( is_front_page() ) {
+			wp_enqueue_style( 'ch-directs-fullpage', get_parent_theme_file_uri( 'assets/css/fullpage.min.css' ), [], '', 'screen' );
+		}
 
 	}
 

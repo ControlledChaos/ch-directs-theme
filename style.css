@@ -287,13 +287,17 @@ b, strong, optgroup {
  * General
  */
 body {
-  background: #fff;
+  background-color: #3f3030;
+  background-image: url("assets/images/wood-bg.jpg");
+  background-repeat: repeat-y;
+  background-size: cover;
+  color: #3f3030;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   line-height: 1.5;
   color: #23282d;
 }
 
-.site {
+body:not(.home) main {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2em;
@@ -572,6 +576,50 @@ h2 + .search-form {
 /**
  * Header
  */
+.intro {
+  z-index: 1000;
+  text-align: center;
+  color: #fff;
+}
+
+.intro header {
+  text-shadow: 0.35em 0.35em 0.3em rgba(0, 0, 0, 0.65);
+}
+
+.intro .site-title {
+  font-family: 'Six Caps', sans-serif;
+  font-size: 10vw;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.intro .site-description {
+  margin-top: 0.5em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.325em;
+  font-weight: bold;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.intro .enter {
+  margin-top: 3vh;
+}
+
+.intro .enter a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  cursor: default;
+}
+
+.intro .enter a:before {
+  font-family: 'ch-directs';
+  font-size: 3em;
+  content: '\f004';
+}
+
 .site-title {
   /* Match <p> tag to <h1> tag on front page */
   font-size: 2em;
