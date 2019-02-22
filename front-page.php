@@ -36,7 +36,7 @@ get_header( 'front' ); ?>
 				</nav>
 			</div>
 		</section>
-		<section class="fp-section" id="projects" style="background:#ddd">
+		<section class="fp-section" id="projects">
 			<h2><?php _e( 'Projects' ); ?></h2>
 			<?php
 			// Projects post type arguments.
