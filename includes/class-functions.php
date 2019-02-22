@@ -56,7 +56,7 @@ if ( is_plugin_active( CHD_PLUGIN ) && ! defined( 'CHD_PLUGIN_PREFIX' ) ) {
 final class Functions {
 
 	/**
-	 * Return the instance of the class.
+	 * Return the instance of the class
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -79,7 +79,7 @@ final class Functions {
 	}
 
 	/**
-	 * Constructor magic method.
+	 * Constructor magic method
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -115,6 +115,9 @@ final class Functions {
 		// Login styles.
 		add_action( 'login_enqueue_scripts', [ $this, 'login_styles' ] );
 
+		// Custom media insert strings.
+		add_filter( 'image_size_names_choose', [ $this, 'insert_custom_image_sizes' ] );
+
 		// Remove the site Customizer.
 		remove_action( 'plugins_loaded', '_wp_customize_include', 10 );
 		remove_action( 'admin_enqueue_scripts', '_wp_customize_loader_settings', 11 );
@@ -123,6 +126,8 @@ final class Functions {
 	}
 
 	/**
+	 * JS detect
+	 *
 	 * Replace 'no-js' class with 'js' in the <html> element when JavaScript is detected.
 	 *
 	 * @since  1.0.0
@@ -136,7 +141,7 @@ final class Functions {
 	}
 
 	/**
-	 * Theme setup.
+	 * Theme setup
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -145,14 +150,14 @@ final class Functions {
 	public function setup() {
 
 		/**
-		 * Load domain for translation.
+		 * Load domain for translation
 		 *
 		 * @since 1.0.0
 		 */
 		load_theme_textdomain( 'ch-directs-theme' );
 
 		/**
-		 * Add theme support.
+		 * Add theme support
 		 *
 		 * @since 1.0.0
 		 */
@@ -176,7 +181,7 @@ final class Functions {
 		add_theme_support( 'post-thumbnails' );
 
 		/**
-		 * Add image sizes.
+		 * Add image sizes
 		 *
 		 * Three sizes per aspect ratio so that WordPress
 		 * will use srcset for responsive images.
@@ -204,7 +209,7 @@ final class Functions {
 		}
 
 		/**
-		 * Set content width.
+		 * Set content width
 		 *
 		 * @since 1.0.0
 		 */
@@ -214,7 +219,7 @@ final class Functions {
 		}
 
 		/**
-		 * Register theme menus.
+		 * Register theme menus
 		 *
 		 * @since  1.0.0
 		 */
@@ -235,7 +240,7 @@ final class Functions {
 	}
 
 	/**
-	 * Clean up meta tags from the <head>.
+	 * Clean up meta tags from the <head>
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -250,7 +255,7 @@ final class Functions {
 	}
 
 	/**
-	 * Frontend scripts.
+	 * Frontend scripts
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -273,7 +278,7 @@ final class Functions {
 	}
 
 	/**
-	 * Admin scripts.
+	 * Admin scripts
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -282,7 +287,7 @@ final class Functions {
 	public function admin_scripts() {}
 
 	/**
-	 * Frontend styles.
+	 * Frontend styles
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -291,21 +296,10 @@ final class Functions {
 	public function frontend_styles() {
 
 		// The main theme stylesheet, minified.
-		wp_enqueue_style( 'ch-directs-theme-style', get_parent_theme_file_uri( 'style.min.css' ), [], '', 'screen' );
+		wp_enqueue_style( 'ch-directs-theme', get_parent_theme_file_uri( 'style.min.css' ), [], '', 'screen' );
 
-		/**
-		 * Check if we and/or Google are online. If so, get Google fonts
-		 * from their servers. Otherwise, get them from the theme directory.
-		 */
-		$google = checkdnsrr( 'google.com' );
-
-		if ( $google ) {
-			wp_enqueue_style( 'ch-directs-theme-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Source+Code+Pro:200,300,400,500,600,700,900', [], '', 'screen' );
-		} else {
-			wp_enqueue_style( 'ch-directs-theme-sans',  get_parent_theme_file_uri( '/assets/fonts/open-sans/open-sans.min.css' ), [], '', 'screen' );
-			wp_enqueue_style( 'ch-directs-theme-serif', get_parent_theme_file_uri( '/assets/fonts/merriweather/merriweather.min.css' ), [], '', 'screen' );
-			wp_enqueue_style( 'ch-directs-theme-code',  get_parent_theme_file_uri( '/assets/fonts/source-code-pro/source-code-pro.min.css' ), [], '', 'screen' );
-		}
+		// Load fonts from Google.
+		wp_enqueue_style( 'ch-directs-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Montserrat:400,700|Six+Caps', [], '', 'screen' );
 
 		// Icon fons stylesheets, minified.
 		wp_enqueue_style( 'ch-directs-theme-icons', get_theme_file_uri( '/assets/css/ch-directs.min.css' ), [], '', 'screen' );
@@ -319,7 +313,7 @@ final class Functions {
 	}
 
 	/**
-	 * Admin styles.
+	 * Admin styles
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -327,13 +321,20 @@ final class Functions {
 	 */
 	public function admin_styles() {
 
+		// Load fonts from Google.
+		wp_enqueue_style( 'ch-directs-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Montserrat:400,700|Six+Caps', [], '', 'screen' );
+
+		// Icon fons stylesheets, minified.
+		wp_enqueue_style( 'ch-directs-theme-icons', get_theme_file_uri( '/assets/css/ch-directs.min.css' ), [], '', 'screen' );
+		wp_enqueue_style( 'ch-directs-theme-icons-embedded', get_theme_file_uri( '/assets/css/ch-directs-embedded.min.css' ), [], '', 'screen' );
+
 		// The admin theme stylesheet, minified.
-		wp_enqueue_style( 'ch-directs-theme-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '', 'screen' );
+		wp_enqueue_style( 'ch-directs-theme', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '', 'screen' );
 
 	}
 
 	/**
-	 * Login styles.
+	 * Login styles
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -341,7 +342,48 @@ final class Functions {
 	 */
 	public function login_styles() {
 
+		// Load fonts from Google.
+		wp_enqueue_style( 'ch-directs-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Montserrat:400,700|Six+Caps', [], '', 'screen' );
+
+		// Icon fons stylesheets, minified.
+		wp_enqueue_style( 'ch-directs-theme-icons', get_theme_file_uri( '/assets/css/ch-directs.min.css' ), [], '', 'screen' );
+		wp_enqueue_style( 'ch-directs-theme-icons-embedded', get_theme_file_uri( '/assets/css/ch-directs-embedded.min.css' ), [], '', 'screen' );
+
+		// The login theme stylesheet, minified.
 		wp_enqueue_style( 'ch-directs-theme-login', get_theme_file_uri( '/assets/css/login.min.css' ), [], '', 'screen' );
+
+	}
+
+	/**
+	 * Custom media insert strings
+	 *
+	 * Removes any dashes from custom image sizes names and
+	 * returns the names with uppercase first letters.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return array Returns image names with uppercase first letters
+	 *               and no dashes between words.
+	 */
+	public function insert_custom_image_sizes( $sizes ) {
+
+		// Access global variables.
+		global $_wp_additional_image_sizes;
+
+		// Return sizes as normal if no additional sizes.
+		if ( empty( $_wp_additional_image_sizes ) ) {
+			return $sizes;
+		}
+
+		// Make each additional image size read as desired.
+		foreach ( $_wp_additional_image_sizes as $id => $data ) {
+			if ( ! isset( $sizes[$id] ) ) {
+				$sizes[$id] = ucfirst( str_replace( '-', ' ', $id ) );
+			}
+		}
+
+		// Return the modified image size names.
+		return $sizes;
 
 	}
 
