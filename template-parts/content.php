@@ -44,20 +44,19 @@ $tags = new Template_Tags;
 		the_content( sprintf(
 			wp_kses(
 				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ch-directs-theme' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
+				[
+					'span' => [
+						'class' => [],
+					],
+				]
 			),
 			get_the_title()
 		) );
 
-		wp_link_pages( array(
+		wp_link_pages( [
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ch-directs-theme' ),
 			'after'  => '</div>',
-		) );
-		?>
+		] ); ?>
 	</div>
 
 	<footer class="entry-footer">

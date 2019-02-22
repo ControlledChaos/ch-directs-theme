@@ -28,11 +28,10 @@ $tags = new Template_Tags;
 		<?php
 		the_content();
 
-		wp_link_pages( array(
+		wp_link_pages( [
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ch-directs-theme' ),
 			'after'  => '</div>',
-		) );
-		?>
+		] ); ?>
 	</div>
 
 	<?php if ( get_edit_post_link() ) : ?>
@@ -42,11 +41,11 @@ $tags = new Template_Tags;
 				sprintf(
 					wp_kses(
 						__( 'Edit <span class="screen-reader-text">%s</span>', 'ch-directs-theme' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
+						[
+							'span' => [
+								'class' => [],
+							],
+						]
 					),
 					get_the_title()
 				),

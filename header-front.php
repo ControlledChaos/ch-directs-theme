@@ -23,10 +23,16 @@ if ( is_home() && ! is_front_page() ) {
     $canonical = get_permalink();
 }
 
+if ( is_user_logged_in() && is_admin_bar_showing() && is_front_page() ) {
+	$class = 'no-js front-page-has-toolbar';
+} else {
+	$class = 'no-js';
+}
+
 ?>
 <!doctype html>
 <?php do_action( 'before_html' ); ?>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?> class="<?php echo $class; ?>">
 <head id="<?php echo get_bloginfo( 'wpurl' ); ?>" data-template-set="<?php echo get_template(); ?>">
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<!--[if IE ]>

@@ -68,12 +68,10 @@ if ( is_home() && ! is_front_page() ) {
 
 		<nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'ch-directs-theme' ); ?></button>
-			<?php
-			wp_nav_menu( array(
+			<?php wp_nav_menu( [
 				'theme_location' => 'main',
 				'menu_id'        => 'primary-menu',
-			) );
-			?>
+			] ); ?>
 		</nav>
 	</header>
 

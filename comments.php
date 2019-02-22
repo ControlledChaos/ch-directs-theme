@@ -26,16 +26,16 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-			$CH_Directs_Theme_comment_count = get_comments_number();
-			if ( '1' === $CH_Directs_Theme_comment_count ) {
+			$ch_comment_count = get_comments_number();
+			if ( '1' === $ch_comment_count ) {
 				printf(
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'ch-directs-theme' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf(
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $CH_Directs_Theme_comment_count, 'comments title', 'ch-directs-theme' ) ),
-					number_format_i18n( $CH_Directs_Theme_comment_count ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $ch_comment_count, 'comments title', 'ch-directs-theme' ) ),
+					number_format_i18n( $ch_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}
@@ -45,12 +45,10 @@ if ( post_password_required() ) {
 		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
-			<?php
-			wp_list_comments( array(
+			<?php wp_list_comments( [
 				'style'      => 'ol',
 				'short_ping' => true,
-			) );
-			?>
+			] ); ?>
 		</ol>
 
 		<?php

@@ -10,20 +10,25 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: ch-directs-theme
  */
 
-@import 'assets/css/partials/_reset';
-@import 'assets/css/partials/_images';
-@import 'assets/css/partials/_forms';
-@import 'assets/css/partials/_header';
-@import 'assets/css/partials/_navigation';
-@import 'assets/css/partials/_widgets';
-@import 'assets/css/partials/_posts';
-@import 'assets/css/partials/_footer';
-@import 'assets/css/partials/_comments';
-@import 'assets/css/partials/_miscellaneous';
+@import 'assets/css/partials/reset';
+@import 'assets/css/partials/images';
+@import 'assets/css/partials/forms';
+@import 'assets/css/partials/header';
+@import 'assets/css/partials/navigation';
+@import 'assets/css/partials/front-page';
+@import 'assets/css/partials/widgets';
+@import 'assets/css/partials/posts';
+@import 'assets/css/partials/footer';
+@import 'assets/css/partials/comments';
+@import 'assets/css/partials/miscellaneous';
 
 /**
  * General
  */
+html.front-page-has-toolbar {
+	margin-top: 0px !important;
+}
+
 body {
 	background-color: #3f3030;
 	background-image: url('assets/images/wood-bg.jpg');
