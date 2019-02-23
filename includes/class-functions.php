@@ -307,7 +307,7 @@ final class Functions {
 
 		// FullPageJS styles on the front page.
 		if ( is_front_page() ) {
-			wp_enqueue_style( 'ch-directs-fullpage', get_parent_theme_file_uri( 'assets/css/front-page.min.css' ), [], '', 'screen' );
+			wp_enqueue_style( 'ch-directs-fullpage', get_parent_theme_file_uri( 'assets/css/front-page.min.css' ), [ 'ch-directs-theme' ], '', 'screen' );
 		}
 
 	}

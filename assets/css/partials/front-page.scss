@@ -1,6 +1,38 @@
 /**
  * Front page
  */
-#press-resume {
-	background: #fff;
+.home section {
+
+	h2 {
+		z-index: 100;
+		font-family: 'Six Caps', sans-serif;
+		font-size: 5em;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: #fff;
+		text-shadow: 0.05em 0.05em 0.03em rgba(0,0,0,0.5);
+	}
+
+	> div {
+		margin: 0 auto 0;
+
+		img {
+			display: block;
+		}
+	}
+
+	&#projects,
+	&#contact {
+		background: rgba(36, 28, 28, 0.65);
+		color: #fff;
+	}
+
+	&#press-resume {
+		background: #fff;
+
+		h2 {
+			color: #241c1c;
+			text-shadow: none;
+		}
+	}
 }

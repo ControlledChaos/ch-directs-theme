@@ -20,6 +20,30 @@
 	margin: 1.5em 0 0;
 }
 
+.entry-content {
+
+	h1,
+	h2 {
+		font-family: 'Six Caps', sans-serif;
+		font-size: 5em;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: #fff;
+		text-shadow: 0.05em 0.05em 0.03em rgba(0,0,0,0.5);
+	}
+
+	p,
+	ul,
+	ol {
+		line-height: 1.5;
+	}
+
+	ul,
+	ol {
+		padding-left: 1em;
+	}
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;

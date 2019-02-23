@@ -132,6 +132,7 @@ html.fp-enabled,
 }
 
 .fp-controlArrow:before {
+  position: absolute;
   content: '';
   font-family: 'ch-directs';
   font-size: 3em;

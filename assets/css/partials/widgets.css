@@ -9,3 +9,8 @@
 .widget select {
   max-width: 100%;
 }
+
+.sidebar-widgets ul,
+.sidebar-widgets ol {
+  padding-left: 1em;
+}

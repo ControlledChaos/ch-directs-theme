@@ -21,6 +21,7 @@ Text Domain: ch-directs-theme
 @import 'assets/css/partials/footer';
 @import 'assets/css/partials/comments';
 @import 'assets/css/partials/miscellaneous';
+@import 'assets/css/partials/queries';
 
 /**
  * General
@@ -36,8 +37,6 @@ body {
 	background-size: cover;
 	color: #3f3030;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-	line-height: 1.5;
-	color: #23282d;
 
 	&:not(.home) main {
 		max-width: 1280px;
@@ -46,7 +45,10 @@ body {
 	}
 }
 
-.site {}
+.site {
+	width: 100%;
+	height: 100%;
+}
 
 main article {
 	clear: both;
@@ -66,9 +68,7 @@ ol {
 	margin-top: 1em;
 }
 
-.entry-content ul,
-.sidebar-widgets ul,
-.entry-content ol,
-.sidebar-widgets ol {
-	padding-left: 1em;
+a {
+	color: #3f3030;
+	text-decoration: none;
 }
