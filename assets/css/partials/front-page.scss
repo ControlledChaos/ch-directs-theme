@@ -24,15 +24,19 @@
 	&#projects,
 	&#contact {
 		background: rgba(36, 28, 28, 0.65);
-		color: #fff;
 	}
 
 	&#press-resume {
 		background: #fff;
+		color: #3f3030;
 
 		h2 {
 			color: #241c1c;
 			text-shadow: none;
+		}
+
+		a {
+			color: #3f3030;
 		}
 	}
 }

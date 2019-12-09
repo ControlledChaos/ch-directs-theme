@@ -21,14 +21,18 @@
 
 .home section#projects, .home section#contact {
   background: rgba(36, 28, 28, 0.65);
-  color: #fff;
 }
 
 .home section#press-resume {
   background: #fff;
+  color: #3f3030;
 }
 
 .home section#press-resume h2 {
   color: #241c1c;
   text-shadow: none;
+}
+
+.home section#press-resume a {
+  color: #3f3030;
 }
